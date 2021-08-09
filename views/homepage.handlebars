@@ -1,0 +1,47 @@
+<!-- Loop over each object in the projects array -->
+<span>
+{{#each projects as |project| }}
+<div class="row mb-4 project">
+  <div class="col-md-5">
+    <h2>
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      <a href="/project/{{project.id}}">{{project.name}}</a>
+    </h2>
+    <p>Created by {{project.user.name}} on {{format_date project.date_created}} !!</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{project.description}}
+    </p>
+  </div>
+</div>
+
+<div>
+{{#each project.comments as |comment| }}
+
+<div>
+  {{comment.name}} by {{comment.user.name}}
+</div>
+
+{{/each}}
+</div>
+<div>
+Add a Comment
+
+    <form class="form new-comment-form">
+      <div class="form-group">
+        <input class="form-input" type="text"  id="comment-name-{{project.id}}" name="comment-name" />
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary new-comment" data-project={{project.id}} >Submit</button>
+      </div>
+    </form>
+
+</div>
+
+
+
+{{/each}}
+</span>
+
+<script src="./js/home.js"></script>
