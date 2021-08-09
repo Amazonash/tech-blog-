@@ -9,7 +9,7 @@
 [app](https://glacial-taiga-33879.herokuapp.com/)
 
 ## Example
-![Example1](example.png)
+![Example1](example1.png)
   ## Table of contents
   
   * [Usage](#usage)
